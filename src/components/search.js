@@ -3,13 +3,16 @@ import '../App.css'
 
 class Search extends Component {
   render() {
-    const { value, onChange, children } = this.props;
+    const { value, onChange, onSubmit, children } = this.props;
     return(
-      <form>
+      <form onSubmit={onSubmit}>
         { children }<input
           type="text"
           value={value}
           onChange={onChange} />
+          <button type="submit">
+            {children}
+          </button>
       </form>
       );
   }
